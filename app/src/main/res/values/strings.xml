@@ -18,6 +18,6 @@
     <string name="btnDecimal">.</string>
     <string name="btnMultiply">×</string>
     <string name="btnMinus">-</string>
-    <string name="c">C</string>
+    <string name="btnClear">C</string>
     <string name="btnPercent">%</string>
 </resources>
