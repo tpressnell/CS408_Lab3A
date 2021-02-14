@@ -12,15 +12,13 @@ public class Calculator {
     private BigDecimal answer;
     private StringBuilder inputBuffer;
     private StringBuilder displayBuffer;
-    private boolean multipleOperands = false;
+    private boolean multipleOperations = false;
     private boolean emptyValues = true;
 
     public Calculator(AppCompatActivity parent){
         this.parent = parent;
         inputBuffer = new StringBuilder();
         displayBuffer = new StringBuilder();
-        lValue = new BigDecimal(0);
-        rValue = new BigDecimal(0);
         answer = new BigDecimal(0);
 
     }
@@ -35,7 +33,8 @@ public class Calculator {
         }
 
         else if(button.equals(parent.getResources().getString(R.string.btnDecimal))){
-
+            inputBuffer.append(button);
+            displayBuffer.append(button);
         }
 
         else if(button.equals(parent.getResources().getString(R.string.btnSquareRoot))){
@@ -43,31 +42,96 @@ public class Calculator {
         }
 
         else if(button.equals(parent.getResources().getString(R.string.btnDivide))){
-
+            inputBuffer.append(button);
+            displayBuffer.append(button);
         }
 
         else if(button.equals(parent.getResources().getString(R.string.btnPercent))){
-
+            inputBuffer.append(button);
+            displayBuffer.append(button);
         }
 
         else if(button.equals(parent.getResources().getString(R.string.btnMultiply))){
-
+            inputBuffer.append(button);
+            displayBuffer.append(button);
         }
 
         else if(button.equals(parent.getResources().getString(R.string.btnMinus))){
-
+            inputBuffer.append(button);
+            displayBuffer.append(button);
         }
 
         else if(button.equals(parent.getResources().getString(R.string.btnPlus))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+            multipleOperations = true;
+
+            String [] operands = inputBuffer.toString().split(button);
+            lValue = new BigDecimal(operands[0]);
+            rValue = new BigDecimal(operands[1]);
+
+            answer = lValue.add(rValue);
+
+            displayBuffer = new StringBuilder(answer.toString());
+
 
         }
 
         else if(button.equals(parent.getResources().getString(R.string.btnEquals))){
+        }
 
+        else if(button.equals(parent.getResources().getString(R.string._0))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._1))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._2))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._3))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._4))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._5))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._6))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._7))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._8))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
+        }
+
+        else if(button.equals(parent.getResources().getString(R.string._9))){
+            inputBuffer.append(button);
+            displayBuffer.append(button);
         }
     }
 
     public String getDisplay(){
-        return "";
+        return displayBuffer.toString();
     }
 }
