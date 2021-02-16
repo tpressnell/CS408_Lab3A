@@ -13,7 +13,7 @@ public class Calculator {
     private StringBuilder inputBuffer;
     private StringBuilder displayBuffer;
     private boolean multipleOperations = false;
-    private boolean emptyValues = true;
+    private int numOperands = 0;
 
     public Calculator(AppCompatActivity parent){
         this.parent = parent;
@@ -64,15 +64,24 @@ public class Calculator {
         else if(button.equals(parent.getResources().getString(R.string.btnPlus))){
             inputBuffer.append(button);
             displayBuffer.append(button);
-            multipleOperations = true;
+            ++numOperands;
 
-            String [] operands = inputBuffer.toString().split(button);
-            lValue = new BigDecimal(operands[0]);
-            rValue = new BigDecimal(operands[1]);
+            if (numOperands > 1) {
 
-            answer = lValue.add(rValue);
+                String[] operands = inputBuffer.toString().split(button);
+                lValue = new BigDecimal(operands[0]);
+                rValue = new BigDecimal(operands[1]);
 
-            displayBuffer = new StringBuilder(answer.toString());
+
+                answer = lValue.add(rValue);
+
+                lValue = answer;
+
+
+                displayBuffer = new StringBuilder(answer.toString());
+                inputBuffer = new StringBuilder(answer.toString());
+                numOperands = 1;
+            }
 
 
         }
