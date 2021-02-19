@@ -14,6 +14,7 @@ public class Calculator {
     private StringBuilder displayBuffer;
     private boolean secondOperand;
     private boolean decimalUsed;
+    private boolean equalsHit;
     private String operator;
 
     public Calculator(AppCompatActivity parent) {
@@ -149,35 +150,76 @@ public class Calculator {
                 rValue = new BigDecimal(0);
                 secondOperand = false;
                 decimalUsed = false;
+                equalsHit = true;
 
             } else if (button.equals(parent.getResources().getString(R.string._0))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._1))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._2))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._3))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._4))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._5))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._6))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._7))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._8))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             } else if (button.equals(parent.getResources().getString(R.string._9))) {
+                if(equalsHit == true){
+                    displayBuffer = new StringBuilder();
+                    equalsHit = false;
+                }
                 inputBuffer.append(button);
                 displayBuffer.append(button);
             }
